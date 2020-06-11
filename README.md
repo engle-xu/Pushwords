@@ -14,11 +14,15 @@ you can push words to your group by schedule runing this code
 eg: 0 8 * * * [the path of your python] [the path of your file]
 
     每天8点运行程序
+   
+3. click esc button to exit, then shift + :,input wq to save command and exit vim edit.
 
-link:how to get group id and token:
+
+
+## Reference:how to get group id and token:
 https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
 
-3. In order to get the group chat id, do as follows:
+In order to get the group chat id, do as follows:
 
 (1) Add the Telegram BOT to the group.
 
