@@ -15,7 +15,7 @@ eg: 0 8 * * * [the path of your python] [the path of your file]
 
     每天8点运行程序
    
-3. click 'esc' button to exit, then 'shift' + ':' ,input 'wq' to save command and exit vim edit.
+3. Click 'esc' button to exit, then 'shift' + ':' ,input 'wq' to save command and exit vim edit.
 
 
 
