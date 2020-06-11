@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 import datetime
+import time
+
 import requests
 import logging
 from lib.config_tool import ConfigTool
@@ -17,17 +19,22 @@ class TelegramBot(object):
         self.token = self.config.get('token')
 
     def my_message(self):
-        words = Words.get_unprocessed_words(10)
+        words = Words.get_unprocessed_words(limit=10)
+        for word in words:
+            word.updates_status()
+        select_words = Words.get_select_words(limit=10)
+
         new_word = {}
         my_message = []
-        i = 0
-        for word in words:
-            i += 1
-            new_word[word['word']] = word['translation']
-            message = "{}  {}  {} : {} ".format(today, i, word['word'], word['translation'])
+        i = 10
+        for select_word in select_words:
+            new_word[select_word['word']] = select_word['translation']
+            message = "{}  {} : {} ".format(i, select_word['word'], select_word['translation'])
             my_message.append(message)
+            i -= 1
+        my_message.reverse()
 
-        return '\n\n'.join(my_message)
+        return ('Today is {}, Tofel Words are:\n\n'.format(today)) + '\n\n'.join(my_message)
 
     def telegram_bot_sendtext(self):
         send_text = 'https://api.telegram.org/bot' + self.token + '/sendMessage?chat_id=' + self.group_chat_id + '&parse_mode=Markdown&text=' + self.my_message()
@@ -36,7 +43,4 @@ class TelegramBot(object):
 
 
 if __name__ == '__main__':
-    # TelegramBot().telegram_bot_sendtext()
-    # time.sleep(1)
-    t = TelegramBot()
-    print(t.my_message())
+    TelegramBot().telegram_bot_sendtext()

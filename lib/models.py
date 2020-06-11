@@ -23,11 +23,22 @@ class MySQLModel(Model):
 class Words(MySQLModel):
     word = CharField()
     translation = CharField()
+    status = CharField()
 
     @staticmethod
     def get_unprocessed_words(limit=10):
-        words = list(Words.select().order_by(Words.id.asc()).limit(limit).offset(10).dicts())
+        words = Words.select().where(Words.status == None).order_by(Words.id.asc()).limit(limit)
         return words
 
+    def get_select_words(limit=10):
+        select_words = list(
+            Words.select().where(Words.status == 1).order_by(Words.id.desc()).limit(limit).dicts())
+        return select_words
+
+    def updates_status(self):
+        self.status = 1
+        self.save()
+
+
     class Meta:
-        db_table = 'englishwords'
+        db_table = 'tofel'
