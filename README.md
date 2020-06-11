@@ -20,16 +20,16 @@ https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-cha
 
 3. In order to get the group chat id, do as follows:
 
-1) Add the Telegram BOT to the group.
+(1) Add the Telegram BOT to the group.
 
-2) Get the list of updates for your BOT:
+(2) Get the list of updates for your BOT:
 
 https://api.telegram.org/bot<YourBOTToken>/getUpdates
 Ex:
 
 https://api.telegram.org/bot123456789:jbd78sadvbdy63d37gda37bd8/getUpdates
 
-3) Look for the "chat" object:
+(3) Look for the "chat" object:
 
 {"update_id":8393,"message":{"message_id":3,"from":{"id":7474,"first_name":"AAA"},"chat":{"id":,"title":""},"date":25497,"new_chat_participant":{"id":71,"first_name":"NAME","username":"YOUR_BOT_NAME"}}}
 
