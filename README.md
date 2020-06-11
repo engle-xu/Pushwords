@@ -17,6 +17,30 @@ eg: 0 8 * * * [the path of your python] [the path of your file]
    
 3. Click 'esc' button to exit, then 'shift' + ':' ,input 'wq' to save command and exit vim edit.
 
+## Result presentation
+
+Today is 2020-06-11, Tofel Words are:
+
+1  alter : v.改变，更改 
+
+2  alternate : a.轮流的，交替的；v.轮流，交替n.候选人，替代性选择 
+
+3  altruism : n.利他主义；无私 
+
+4  altruistic : a.无私的，为他人着想的 
+
+5  aluminium : n.铝 
+
+6  amalgam : n.混合物 
+
+7  amalgamate : v.合并；混合 
+
+8  amass : v.积聚 
+
+9  amateur : n.业余爱好者 
+
+10  amateurish : a.业余爱好的，不熟练的
+
 
 
 ## Reference:how to get group id and token:
